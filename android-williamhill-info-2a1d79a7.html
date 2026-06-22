@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>威廉希尔 · 信息参考页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #fafaf9;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 720px;
+            width: 100%;
+        }
+        /* hero */
+        .hero {
+            margin: 1.5rem 0 2.8rem 0;
+            text-align: left;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f2937;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .hero h1 i {
+            font-style: normal;
+            background: #eae7e1;
+            padding: 0 0.3em;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #4b5563;
+            max-width: 600px;
+            border-left: 3px solid #d6cfc0;
+            padding-left: 1.2rem;
+            margin-top: 0.4rem;
+        }
+        /* 通用 section */
+        section {
+            margin-bottom: 3.2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            color: #1f2937;
+            margin-bottom: 1.1rem;
+            border-bottom: 1px solid #e5e3db;
+            padding-bottom: 0.4rem;
+        }
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.2rem 0 0.3rem 0;
+            color: #2d3b4c;
+        }
+        p, li {
+            font-size: 1rem;
+            color: #374151;
+            margin-bottom: 0.8rem;
+        }
+        ul {
+            padding-left: 1.4rem;
+            list-style: none;
+        }
+        ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+        ul li::before {
+            content: "·";
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            color: #9c8772;
+        }
+        /* 卡片式优势区 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+        .feature-item {
+            background: #ffffff;
+            border: 1px solid #edebe6;
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+            flex: 1 1 180px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+        .feature-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .feature-item .label {
+            font-weight: 500;
+            color: #1f2937;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .feature-item .desc {
+            font-size: 0.95rem;
+            color: #5f6b7a;
+        }
+        /* 说明区 (嵌入链接) */
+        .note-box {
+            background: #f5f3ef;
+            border-radius: 18px;
+            padding: 1.6rem 1.8rem;
+            margin: 1.8rem 0 1.8rem 0;
+        }
+        .note-box p {
+            margin-bottom: 0.5rem;
+            color: #2d3b4c;
+        }
+        .note-box a {
+            color: #3a4b5e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #b7aa96;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+        .note-box a:hover {
+            color: #0f1a29;
+            text-decoration-color: #7c6a55;
+        }
+        /* FAQ 摘要 */
+        .faq-item {
+            margin-bottom: 1.4rem;
+            border-bottom: 1px dashed #ddd9d0;
+            padding-bottom: 1rem;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            color: #4b5563;
+            font-size: 0.97rem;
+            padding-left: 0.2rem;
+        }
+        /* 底部链接区 */
+        .footer-links {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e3dfd7;
+            font-size: 0.95rem;
+            color: #5f6b7a;
+        }
+        .footer-links a {
+            color: #3a4b5e;
+            text-decoration: none;
+            border-bottom: 1px dotted #c5b9aa;
+        }
+        .footer-links a:hover {
+            border-bottom: 1px solid #7c6a55;
+        }
+        .footer-meta {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: #8c857b;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8e3db;
+            margin: 4.2rem 0 2rem 0;
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.9rem; }
+            .feature-item { flex: 1 1 100%; }
+            .note-box { padding: 1.2rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>威廉希尔 · 资料<span style="background: #eae7e1; padding: 0 0.2rem;">对照</span>与延伸阅读</h1>
+        <p>日常查询、对比不同信息源时，一个可靠的参考点能让思路更清晰。本页面围绕「威廉希尔」整理常见话题，帮助你快速定位内容，不做判断替你。</p>
+    </div>
+
+    <!-- 优势区：卡片 -->
+    <section>
+        <h2>为什么把这里当作起点</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="label">信息聚合</span>
+                <span class="desc">将零散提及整合为结构化的条目，方便检索和对照。</span>
+            </div>
+            <div class="feature-item">
+                <span class="label">场景具体</span>
+                <span class="desc">每个问题都来自实际阅读中遇到的模糊点，而非抽象概念。</span>
+            </div>
+            <div class="feature-item">
+                <span class="label">克制表达</span>
+                <span class="desc">避免过度包装，只提供事实、背景和可验证的参考路径。</span>
+            </div>
+            <div class="feature-item">
+                <span class="label">持续更新</span>
+                <span class="desc">根据常见疑惑和资料变化，补充新条目与关联内容。</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区：嵌入链接 -->
+    <section>
+        <h2>延伸阅读与原文出处</h2>
+        <div class="note-box">
+            <p>如果你正在寻找某个具体概念的原初表述，或者想核对本文引用的背景信息，可以直接参考相关页面。例如，关于平台运作机制与信息来源的说明，<a href="https://android-williamhill.com">威廉希尔</a> 提供了最直接的原始内容。建议对照原文与自己手头的资料做交叉验证，这样理解会更完整。</p>
+            <p style="margin-top:0.6rem;">另外，一些术语解释和常见疑问的延伸回答也收录在站内其他栏目中，可以作为补充阅读。</p>
+        </div>
+    </section>
+
+    <!-- 场景：日常查询角度 -->
+    <section>
+        <h2>常见的查询场景</h2>
+        <ul>
+            <li>在阅读某篇分析文章时遇到“赔率”与“概率”换算——需要快速找到标准换算公式和默认参数。</li>
+            <li>对比不同平台的说明——想知道同一件事在不同文档中的表述差异，例如“水位”与“返还率”的定义。</li>
+            <li>查找历史变更记录——某些规则或界面描述已更新，希望找到旧版说明以了解演变过程。</li>
+            <li>验证第三方引用的准确性——看到某篇文章引用了一组数字，想回到原始出处确认是否一致。</li>
+        </ul>
+    </section>
+
+    <!-- FAQ 摘要（克制、不夸张） -->
+    <section>
+        <h2>FAQ 摘要 · 常见疑惑</h2>
+        <div class="faq-item">
+            <div class="faq-q">为什么有些数值在不同页面显示不一样？</div>
+            <div class="faq-a">可能是因为引用时间点不同（如赛季更新前后），也可能是四舍五入精度设置差异。建议以最新官方说明为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">如何确认某条信息的时效性？</div>
+            <div class="faq-a">页面底部或头部通常会标注最后更新日期。若未标注，可对照近期相关新闻或官方发布日志进行交叉判断。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">“威廉希尔”与同类术语之间是什么关系？</div>
+            <div class="faq-a">它是一种特定表述的固定组合，常作为独立条目出现。在阅读时注意上下文，不要与其他类似名称混淆。具体定义可参考原出处。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">延伸阅读的链接打不开或内容变化了怎么办？</div>
+            <div class="faq-a">可以尝试搜索页面的缓存版本，或直接通过网站内搜索功能查找相近内容。本页面也会定期检查链接有效性。</div>
+        </div>
+    </section>
+
+    <!-- 底部链接区 + 附加提示 -->
+    <footer class="footer-links">
+        <p>本页为信息参考页，所有内容仅供对照与延伸阅读。更多原始资料可查阅 <a href="https://android-williamhill.com">威廉希尔</a> 上的完整文档。</p>
+        <p class="footer-meta">页面版本：2025-04 · 内容方向：日常查询与对照 · 静态页面，无动态跟踪</p>
+    </footer>
+
+</div>
+</body>
+</html>
