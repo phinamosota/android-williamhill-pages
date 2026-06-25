@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 资料索引 | homemain-fifa2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f7f9fb;
+            color: #1a1f2b;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        /* 标题层级 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+            color: #0b1a2a;
+            line-height: 1.2;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #4d6072;
+            margin-bottom: 2.5rem;
+            border-left: 3px solid #cbd5e0;
+            padding-left: 1rem;
+        }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 2.2rem 0 0.8rem 0;
+            color: #1d2c3c;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.3rem;
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2d3f50;
+            margin: 1.6rem 0 0.4rem 0;
+        }
+        p {
+            margin-bottom: 1rem;
+            color: #2a3747;
+            font-size: 0.95rem;
+        }
+        a {
+            color: #1c6a9e;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0c9dd;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        a:hover {
+            color: #0a3b5c;
+            border-bottom-color: #0a3b5c;
+        }
+        /* 目录感卡片 */
+        .index-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 1.2rem 0 1.8rem 0;
+        }
+        .index-item {
+            background: #ffffff;
+            border: 1px solid #e4ebf2;
+            border-radius: 8px;
+            padding: 0.9rem 1.2rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            transition: background 0.1s, box-shadow 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        .index-item:hover {
+            background: #f4f7fb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .index-num {
+            font-size: 0.8rem;
+            color: #8094a8;
+            font-weight: 400;
+            min-width: 1.8rem;
+            font-variant-numeric: tabular-nums;
+        }
+        .index-label {
+            font-weight: 500;
+            color: #1a2b3d;
+            font-size: 0.95rem;
+        }
+        .index-desc {
+            color: #4f647a;
+            font-size: 0.85rem;
+            margin-left: auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 45%;
+        }
+        /* 标注区 / 提示 */
+        .note-box {
+            background: #edf2f7;
+            border-left: 4px solid #3b6c9c;
+            padding: 1rem 1.2rem;
+            border-radius: 0 6px 6px 0;
+            margin: 1.8rem 0;
+            font-size: 0.9rem;
+            color: #1e3143;
+        }
+        .note-box strong {
+            font-weight: 600;
+            color: #0f2a41;
+        }
+        .info-panel {
+            background: #ffffff;
+            border: 1px solid #dfe8f0;
+            border-radius: 10px;
+            padding: 1.3rem 1.4rem;
+            margin: 1.8rem 0;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.02);
+        }
+        .info-panel p {
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+        }
+        .info-panel p:last-child {
+            margin-bottom: 0;
+        }
+        .faq-short {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+        }
+        .faq-short li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #e9eef4;
+            font-size: 0.88rem;
+            color: #2b3f53;
+        }
+        .faq-short li:last-child {
+            border-bottom: 0;
+        }
+        .faq-short li::before {
+            content: "▹ ";
+            color: #557a9c;
+        }
+        .footnote {
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: #62778d;
+            border-top: 1px solid #dce4ed;
+            padding-top: 1.2rem;
+            text-align: left;
+        }
+        .footnote a {
+            border-bottom: 1px dotted #95afc4;
+        }
+        @media (max-width: 480px) {
+            body { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.6rem; }
+            .index-item { flex-wrap: wrap; gap: 0.3rem; }
+            .index-desc { white-space: normal; max-width: 100%; margin-left: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>世界杯 · 资料索引</h1>
+    <div class="subhead">基于 homemain-fifa2026 的信息整理节点</div>
+
+    <p>本节目的围绕即将到来的 <a href="https://homemain-fifa2026.com">世界杯</a> 提供结构化的资料汇编。以下索引覆盖了从赛事基础档案、参赛球队构成到历史数据的分类入口，帮助快速定位关键内容。所有来源均整理自公开信息与官方渠道，力求简洁、准确。</p>
+
+    <!-- 目录感入口 -->
+    <div class="index-grid">
+        <div class="index-item">
+            <span class="index-num">01</span>
+            <span class="index-label">赛事档案</span>
+            <span class="index-desc">时间 · 场馆 · 赛制</span>
+        </div>
+        <div class="index-item">
+            <span class="index-num">02</span>
+            <span class="index-label">参赛队伍</span>
+            <span class="index-desc">48 队 · 分组 · 资格</span>
+        </div>
+        <div class="index-item">
+            <span class="index-num">03</span>
+            <span class="index-label">历史纪录</span>
+            <span class="index-desc">历届冠军 · 数据</span>
+        </div>
+        <div class="index-item">
+            <span class="index-num">04</span>
+            <span class="index-label">赛程与地点</span>
+            <span class="index-desc">北美 · 城市 · 球场</span>
+        </div>
+        <div class="index-item">
+            <span class="index-num">05</span>
+            <span class="index-label">规则与变化</span>
+            <span class="index-desc">新赛制 · 名额</span>
+        </div>
+    </div>
+
+    <!-- 说明区：资料整理角度 -->
+    <h2>关于这个索引</h2>
+    <p>页面定位为非官方资料站，通过分类目录的方式聚合与 <a href="https://homemain-fifa2026.com">世界杯</a> 相关的文本素材。每条索引背后对应一组整理笔记，涵盖历届赛事对比、本届参赛队背景、场馆功能数据等。信息密度优先，不做过度渲染，适合需要快速查阅框架的用户。</p>
+
+    <div class="info-panel">
+        <h3 style="margin-top:0; border-bottom:none; padding-bottom:0;">相关信息</h3>
+        <ul class="faq-short">
+            <li>2026 年世界杯由美国、加拿大、墨西哥联合举办</li>
+            <li>参赛队从 32 支扩军至 48 支，小组赛阶段调整为 16 组每组 3 队</li>
+            <li>决赛预计于 2026 年 7 月 19 日举行</li>
+            <li>共 16 个主办城市，其中美国 11 个、加拿大 2 个、墨西哥 3 个</li>
+        </ul>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="note-box">
+        <strong>使用提示</strong> · 索引本身为静态框架，每条目指向的详细内容会在后续更新中逐步补充。当前阶段可直接通过链接跳转至 <a href="https://homemain-fifa2026.com">世界杯</a> 主站获取最新动态。本页不收集任何用户数据，仅为资料导航。
+    </div>
+
+    <!-- 补充说明：切入角度 -->
+    <h2>信息组织方式</h2>
+    <p>本索引的整理遵循三个原则：<strong>可查性</strong>——每个条目都对应一个明确的主题域；<strong>层次性</strong>——从宏观赛程到微观规则逐级下探；<strong>克制性</strong>——不堆砌无来源的数据，每条信息均标注参考范围。例如“赛事档案”条目下会收录各阶段日期、揭幕战与决赛场馆、比赛用球技术参数等，但不包含未经确认的预测或传闻。</p>
+
+    <p>如果你正在寻找关于 <a href="https://homemain-fifa2026.com">世界杯</a> 的系统化资料入口，这个索引可以作为起点。页面结构本身也是一份“关于如何整理”的示例，后续会随赛事推进继续迭代。</p>
+
+    <!-- FAQ 摘要 (有问有答风格) -->
+    <h2>常见索引问题</h2>
+    <div class="faq-short" style="margin-bottom:1rem;">
+        <li><strong>索引内容多久更新？</strong> 随官方公告与可靠资料不定期刷新，无固定周期。</li>
+        <li><strong>是否含历史世界杯数据？</strong> 是，索引第三项「历史纪录」覆盖 1930 年至 2022 年历届决赛圈信息。</li>
+        <li><strong>每一条目下有多少条信息？</strong> 视主题而定，少则 6–8 条，多则 20 余条。</li>
+        <li><strong>可以下载或引用这些资料吗？</strong> 可以，来源均注明出处，引用时请核对原文。</li>
+    </div>
+
+    <div class="footnote">
+        资料索引 · 基于公开信息整理 · 最终解释以官方发布为准<br>
+        主站：<a href="https://homemain-fifa2026.com">世界杯</a>
+    </div>
+
+</div>
+</body>
+</html>
