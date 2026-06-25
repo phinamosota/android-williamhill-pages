@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 赛事洞察与资讯焦点 · HOMENEWS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f6f8fb;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #0b1a2e 0%, #1f3a57 100%);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+      color: #e8edf3;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .sub {
+      font-size: 1.15rem;
+      color: #b8ccde;
+      max-width: 700px;
+      margin: 0.6rem auto 0;
+      font-weight: 350;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .summary-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.5rem;
+    }
+
+    .summary-card p {
+      font-size: 1.05rem;
+      color: #2c3e50;
+    }
+
+    .summary-card a {
+      color: #c4452c;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .summary-card a:hover {
+      color: #a3331f;
+      border-bottom-color: #c4452c;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      transition: transform 0.15s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0f253a;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-card p {
+      color: #3a4b5e;
+      font-size: 0.98rem;
+    }
+
+    .feature-card .highlight {
+      display: inline-block;
+      background: #eef3f9;
+      color: #1f3a57;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 0.8rem;
+    }
+
+    .usage-scenario {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      margin: 2rem 0 2.5rem;
+    }
+
+    .usage-scenario h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #0f253a;
+      margin-bottom: 1.2rem;
+    }
+
+    .scenario-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .scenario-item {
+      background: #f2f5fa;
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.95rem;
+      color: #1e3a4f;
+      font-weight: 450;
+      border: 1px solid #e2e8f0;
+    }
+
+    .faq-mini {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      margin-top: 2rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e5eaef;
+      padding-bottom: 0.8rem;
+    }
+
+    .faq-mini details:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-mini summary {
+      font-weight: 600;
+      color: #0f253a;
+      cursor: pointer;
+      padding: 0.2rem 0;
+      font-size: 1rem;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      color: #c4452c;
+    }
+
+    .faq-mini p {
+      margin-top: 0.5rem;
+      color: #3a4b5e;
+      font-size: 0.95rem;
+      padding-left: 0.3rem;
+    }
+
+    .trust-note {
+      background: #eaf0f7;
+      border-radius: 20px;
+      padding: 1.2rem 1.8rem;
+      margin: 2.2rem 0 1.5rem;
+      font-size: 0.95rem;
+      color: #1f3955;
+      border-left: 4px solid #c4452c;
+      line-height: 1.5;
+    }
+
+    .trust-note strong {
+      color: #0e2238;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      font-size: 0.85rem;
+      color: #7c8b9c;
+      border-top: 1px solid #dce3eb;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 740px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        padding: 3rem 1.2rem 2.5rem;
+      }
+
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .summary-card,
+      .feature-card,
+      .usage-scenario,
+      .faq-mini {
+        padding: 1.5rem 1.3rem;
+      }
+
+      .scenario-items {
+        gap: 0.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .hero .sub {
+        font-size: 1rem;
+      }
+
+      .container {
+        padding: 1.8rem 1rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>世界杯 · 赛程之外</h1>
+    <div class="sub">从抽签解读到晋级概率，聚合赛事关键信息，专注深度内容而非碎片比分</div>
+  </section>
+
+  <div class="container">
+
+    <!-- 摘要 -->
+    <div class="summary-card">
+      <p>
+        一届大赛的面貌远不止最终比分。围绕 <a href="https://homenews-fifa2026.com">世界杯</a> 的战术演变、阵容结构、主办城市适应度以及历史对位数据，构成理解赛事走向的完整拼图。本站定位于筛选和整理这些维度的可靠信息，帮助关注者建立更立体的观赛认知框架。不追求实时滚动刷新，意在提供可回溯、可查证的背景内容。
+      </p>
+    </div>
+
+    <!-- 亮点卡片 两列 -->
+    <div class="grid-2col">
+      <div class="feature-card">
+        <h3>战术趋势摘要</h3>
+        <p>每轮赛后梳理主流阵型变化、高位逼抢效率与转换节奏数据，提炼出各队真实的战术倾向，而非仅看控球率。</p>
+        <span class="highlight">基于公开比赛报告</span>
+      </div>
+      <div class="feature-card">
+        <h3>阵容与轮换分析</h3>
+        <p>跟踪大名单伤病动态、出场时间分布及关键球员负荷。在密集赛程下，轮换策略往往比首发名气更具决定意义。</p>
+        <span class="highlight">球员疲劳指数参考</span>
+      </div>
+    </div>
+
+    <!-- 使用建议 / 场景 -->
+    <div class="usage-scenario">
+      <h2>使用场景与建议</h2>
+      <div class="scenario-items">
+        <span class="scenario-item">赛前对手研究报告</span>
+        <span class="scenario-item">淘汰赛对阵预分析</span>
+        <span class="scenario-item">主办城市球场微气候</span>
+        <span class="scenario-item">历史交锋隐性规律</span>
+        <span class="scenario-item">裁判尺度与判罚倾向</span>
+        <span class="scenario-item">小组出线形势推演</span>
+      </div>
+      <p style="margin-top: 1.2rem; color: #3a4b5e; font-size: 0.98rem;">
+        可将每篇文章当作独立背景资料使用，也可按赛事阶段纵向对比。建议在大赛关键节点（如小组抽签、首轮后、淘汰赛前）集中浏览，以获取更系统的参考信息。
+      </p>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <div class="trust-note">
+      <strong>关于信息来源：</strong> 本站不生成原始比赛数据，所有内容均源自公开赛事报告、官方统计及经核实的媒体报道。页面内分析标注明确依据，不包含主观博彩建议或未经验证的传闻。访问即代表接受信息仅供参考。<br>
+      <span style="display: inline-block; margin-top: 0.5rem;">✅ 无隐藏付费 · 无诱导分享 · 无自动刷新</span>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <details>
+        <summary>内容更新频率如何？</summary>
+        <p>国际比赛日窗口及大赛期间每周更新 3–5 篇分析；非窗口期保持每月 8–12 篇背景专题。不推送即时比分。</p>
+      </details>
+      <details>
+        <summary>是否提供深度数据图表？</summary>
+        <p>部分文章嵌入静态信息图与对比表格，数据均标注来源。不接入实时 API，避免信息过载。</p>
+      </details>
+      <details>
+        <summary>能否直接转载内容？</summary>
+        <p>引用本站内容请注明原文链接。允许合理引用片段进行非商业讨论，但反对全文搬运或篡改分析逻辑。</p>
+      </details>
+    </div>
+
+    <div class="footer-note">
+      © 2025 · 赛事洞察 · 内容平台
+    </div>
+  </div>
+</body>
+</html>
